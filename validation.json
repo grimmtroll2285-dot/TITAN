@@ -1,0 +1,18 @@
+{
+  "stage1": {
+    "bytes": 9749264,
+    "sha256": "df2524c7a90709c14ea435eaff2cc57e6fac3d36a85428488d16e3d151af6bbf"
+  },
+  "stage2": {
+    "bytes": 19497744,
+    "sha256": "127c87e640bc755710c2ec72c6af85f0891b42cf0291ee569478d595385fba71"
+  },
+  "tests_passed": 124,
+  "ownership_harness_passed": true,
+  "automatic_uninstall_symbol_check_passed": true,
+  "build_warnings": [],
+  "runtime_changed": false,
+  "hardware_tested": false,
+  "shadowmount_version": "1.7beta10-titan-isolated3",
+  "shadowmount_sha256": "4c1afcc437e960b9fcf54fd1f81e4a5d4d049950b9923a707660bb7753f0be07"
+}
