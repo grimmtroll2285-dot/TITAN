@@ -1,21 +1,21 @@
 {
-  "name": "TITAN CORE · SirenaGoloviy · FIX6",
-  "icons_url": "https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/download/fix6/icons.json",
+  "name": "TITAN · SirenaGoloviy · FIX7",
+  "icons_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix7/icons.json",
   "payloads": [
     {
       "id": "titan-core-sirenagoloviy",
-      "name": "TITAN CORE · FIX6 · PlayGo + Updater",
-      "filename": "TITAN-CORE-SirenaGoloviy-fix6.elf",
-      "url": "https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/download/fix6/TITAN-CORE-SirenaGoloviy-fix6.elf",
-      "version": "1.0.4",
+      "name": "TITAN · FIX7 · PlayGo + Backports",
+      "filename": "TITAN-SirenaGoloviy-fix7.elf",
+      "url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix7/TITAN-SirenaGoloviy-fix7.elf",
+      "version": "1.0.5",
       "last_update": "2026-11-18",
       "category": "Games",
       "author": "SirenaGoloviy · upstream authors credited in source",
-      "description": "Embedded PlayGo 0.6 + on-console automatic checks, manual version download, update and downgrade. Console validation pending.",
-      "checksum": "a5efa9861df0c57b66fbac2819af6583a88513b1bd8db6d4bb0ec50e6edd09b2",
-      "icon_key": "titan-fix6-avatar",
-      "source": "https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy",
-      "details_url": "https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/download/fix6/README.txt"
+      "description": "TITAN branding, PlayGo game checkboxes and native backport catalog manager. Catalog currently empty; hardware validation pending.",
+      "checksum": "1cc52e2462fff8c488a9887fbd0126aa70ab265f6c1fa756ecc1b1a580df73d3",
+      "icon_key": "titan-fix7-avatar",
+      "source": "https://github.com/grimmtroll2285-dot/TITAN",
+      "details_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix7/README.txt"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "catalog": "https://raw.githubusercontent.com/grimmtroll2285-dot/TITAN/main/backports/catalog.json",
+  "references": [
+    {
+      "name": "BackPork · BestPig",
+      "url": "https://github.com/BestPig/BackPork",
+      "kind": "BPS patches and library sideloading; not ready-to-install per-game catalog"
+    },
+    {
+      "name": "PS5 Backport Toolkit",
+      "url": "https://github.com/cherryduck/ps5-backport-toolkit",
+      "kind": "Backport creation tools; user-provided libraries required"
+    },
+    {
+      "name": "PS5 Game Updater",
+      "url": "https://theghostonline.dev/theghostonline/PS5-Game-Updater",
+      "kind": "Separate updater project; public verified-seed.json checked 2026-11-18: zero entries"
+    }
+  ]
+}

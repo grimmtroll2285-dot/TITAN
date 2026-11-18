@@ -59,3 +59,11 @@ RustCrypto sha2 0.10.9 supplies streaming SHA-256. Dependency source, original
 licenses and lockfile hashes are retained in vendor/updater-dependencies.
 Local release/download/downgrade integration: SirenaGoloviy fork. Upstream
 TITAN, Kraken, PlayGo, AMPR, kstuff and ShadowMount authorship remains unchanged.
+
+## Backports catalog source feature
+
+The TITAN/SirenaGoloviy catalog format, packaging tool, UI and native managed-overlay integration are local additions after FIX6. No third-party game backport or Sony module is bundled by this feature; metadata must retain each patch author and source. Existing GPL and upstream credits remain unchanged. See docs/BACKPORTS.md.
+
+## TITAN FIX7 branding
+
+The owner renamed the current distribution and UI to TITAN and its repository to grimmtroll2285-dot/TITAN. The original TITAN CORE project authorship above is retained. Internal data paths and engine identifiers stay compatible; vendor binaries and PlayGo remain unchanged.

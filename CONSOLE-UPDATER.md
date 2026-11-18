@@ -1,3 +1,9 @@
+FIX7 migration note: the repository is now grimmtroll2285-dot/TITAN. FIX6's
+old pinned asset URLs can prevent an in-app transition after the rename: load
+FIX7 manually and update old Payload Manager/autoload copies. FIX7 recognizes
+both new TITAN- and historical TITAN-CORE filenames in the new repository.
+Downgrading to FIX6 restores that older updater behavior.
+
 # FIX6 console updater (1.0.4)
 
 The updater and embedded PlayGo 0.6 are part of the same unified payload. Existing
@@ -31,7 +37,7 @@ baseline. No claim of additional game compatibility or restored licenses is made
 
 ## Trust, storage and failure handling
 
-Only the owner repository `grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy` is queried.
+Only the owner repository `grimmtroll2285-dot/TITAN` is queried.
 The server accepts a validated release tag, never a browser-provided URL, path or
 checksum. Only a single supported TITAN-CORE ELF asset from a published release is
 accepted. Tags and asset paths must match the exact owner repository. Drafts,

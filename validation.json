@@ -1,19 +1,19 @@
 {
-  "version": "1.0.4",
-  "release_tag": "fix6",
+  "version": "1.0.5",
+  "release_tag": "fix7",
+  "repository": "grimmtroll2285-dot/TITAN",
   "prerelease": false,
-  "base": "Fix5 1.0.3 + Fix6 PlayGo pre1 + console updater",
+  "product_name": "TITAN",
+  "base": "FIX6 + native backports catalog + PlayGo game selection",
   "stage1": {
-    "bytes": 10437520,
-    "sha256": "0c7583de619e908d98f30eb704aa8a90bafe346fb6f22e59b6c490b343c187a8",
-    "entry": "0x1961f4",
-    "type": "ELF64 x86-64 ET_DYN"
+    "bytes": 10650608,
+    "sha256": "4b0842a0c94f62060103a2fd3c2ab40dd26c9b2392733bc6ba001e4fe569a3b3",
+    "entry": "0x1a36b4"
   },
   "stage2": {
-    "bytes": 20874128,
-    "sha256": "a5efa9861df0c57b66fbac2819af6583a88513b1bd8db6d4bb0ec50e6edd09b2",
-    "entry": "0x196464",
-    "type": "ELF64 x86-64 ET_DYN"
+    "bytes": 21300208,
+    "sha256": "1cc52e2462fff8c488a9887fbd0126aa70ab265f6c1fa756ecc1b1a580df73d3",
+    "entry": "0x1a3904"
   },
   "stage1_embedded_exactly": true,
   "components": {
@@ -35,48 +35,35 @@
     }
   },
   "tests": {
-    "portable_rust": 72,
-    "pkg_reader": 8,
-    "javascript_policy_and_ui": 11,
-    "total": 91,
-    "production_updater_validated_both_built_elfs": true,
-    "synthetic_browser_downgrade_selection_and_prepared_status": "passed",
-    "localization_and_js_syntax": "passed"
+    "portable_rust": 81,
+    "pkg": 8,
+    "javascript": 20,
+    "python": 3,
+    "total": 112,
+    "production_updater_verifies_both_elfs": true,
+    "bundled_javascript_syntax": "passed",
+    "ps5_typecheck": "passed without warnings",
+    "localization": "497 entries; 31 selectable locales; explicit technical fallback"
   },
-  "ps5_typecheck": "passed",
   "build_warnings": [],
   "compiler_jobs": 2,
   "hardware_tested": false,
-  "console_updater_hardware_tested": false,
-  "playgo_upstream_modified": false,
-  "shadowmount_version": "1.7beta12-titan-isolated4",
-  "updater": {
-    "repository": "grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy",
-    "automatic_metadata_check_seconds": 1800,
-    "initial_delay_seconds": 20,
-    "default_channels": [
-      "stable",
-      "prerelease"
-    ],
-    "manual_actions": [
-      "download",
-      "install",
-      "upgrade",
-      "downgrade",
-      "reinstall"
-    ],
-    "digest": "SHA-256 via RustCrypto sha2 0.10.9",
-    "previous_saved_elf": "/data/titan-core/titan-core.previous.elf",
-    "activation": "full reboot then saved TITAN tile; stale external autoload ELF must be updated separately",
-    "max_payload_bytes": 67108864
+  "backports": {
+    "default_catalog": "https://raw.githubusercontent.com/grimmtroll2285-dot/TITAN/main/backports/catalog.json",
+    "game_entries": 0,
+    "reference_projects": 3,
+    "native_pkg_folder_install_supported": true,
+    "shadowmount_image_install_supported": false,
+    "activation": "different boot required",
+    "original_game_files_modified": false
   },
+  "rename_migration": "FIX6 pinned repository/asset URL checks can block update discovery after rename; manually load FIX7 once and replace old autoload sources",
   "known_limits": [
-    "Combined ELF and updater HTTPS/download/install/reboot have not been console-tested",
-    "007 / MGS4 / Yotei fixes and performance not verified; no license repair",
-    "Mid-build launch race remains open; wait until preparation finishes before playing",
-    "No automatic boot rollback; old autoload ELF may overwrite prepared saved copy",
-    "Downgrading to a release without updater removes updater UI until a newer ELF is loaded",
-    "Console filesystem directory-sync and power-loss behavior require hardware testing",
-    "Native PS5 runtime only; ShadowMount-owned images retain existing runtime policy"
+    "New ELF and console downloader/boot/rollback not hardware-tested",
+    "No verified game backports included",
+    "Image backport installation unsupported",
+    "Existing mid-build launch race remains; wait for Ready",
+    "Experimental separate PKG/fakelib2 audit excluded",
+    "Backport directory sync/power-loss behavior requires console validation"
   ]
 }

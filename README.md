@@ -1,57 +1,53 @@
-<p align="center"><img src="https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/download/fix6/titan-avatar.jpg" width="128" height="128" alt="TITAN CORE · SirenaGoloviy"></p>
+<p align="center"><img src="https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix7/titan-avatar.jpg" width="128" height="128" alt="TITAN · SirenaGoloviy"></p>
 
-# TITAN CORE · SirenaGoloviy
+# TITAN · SirenaGoloviy
 
-**[Скачать FIX6 ELF / Download FIX6 ELF](https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/download/fix6/TITAN-CORE-SirenaGoloviy-fix6.elf)** · **[Релиз 1.0.4 / Release](https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/tag/fix6)**
+**[Скачать FIX7 ELF](https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix7/TITAN-SirenaGoloviy-fix7.elf)** · **[Релиз 1.0.5](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix7)**
 
-[Полные исходники / Full source](https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/download/fix6/TITAN-CORE-SirenaGoloviy-fix6-source.zip) · [SHA-256](https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/download/fix6/SHA256SUMS.txt) · [Авторы / Credits](CREDITS.md) · [GPL-3.0](LICENSE)
+[Полные исходники](https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix7/TITAN-SirenaGoloviy-fix7-source.zip) · [SHA-256](https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix7/SHA256SUMS.txt) · [Авторы](CREDITS.md) · [GPL-3.0](LICENSE)
 
-# FIX6 · 1.0.4 · PlayGo + обновления на консоли
+# TITAN · FIX7 · 1.0.5 · SirenaGoloviy
 
-**PLAY NO LIMIT by SirenaGoloviy**
+PLAY NO LIMIT by SirenaGoloviy
 
-Обычный релиз FIX6: объединены PlayGo из предыдущего pre-release и обновлятор TITAN с выбором версии.
+TITAN CORE переименован в TITAN. В этой версии собраны вкладка бэкпортов и выбор PlayGo по списку игр поверх FIX6.
 
-## Что добавлено
+## Что изменилось
 
-- Встроен оригинальный PlayGo Stub 0.6 от drakmor. Он сообщает играм о готовности частей установки; реальные данные читает AMPR. Включён по умолчанию при inject_ampr, есть общий переключатель и исключения по Title ID в расширенных настройках.
-- Ручной libScePlayGo.sprx в /data/titan-core/ampr имеет приоритет. Выключение PlayGo или исключение игры отключает общую подмену без удаления ручного файла. Меняется только fakelib, оригиналы PKG остаются на месте. Игры-образы ShadowMount сохраняют прежнюю политику библиотек.
-- На самой консоли: проверка выпусков через 20 секунд после старта и затем каждые 30 минут, даже с закрытой веб-страницей. Автоматической установки нет.
-- В окне «Обновления» доступны стабильные и предварительные выпуски, выбор версии, скачивание на консоль, обновление, даунгрейд и повторная установка. Для старых выпусков без номера версии показывается тег.
-- Скачивание проверяет размер, SHA-256 и структуру ELF. Сервер берёт адрес и контрольную сумму из выбранного выпуска нашего репозитория; произвольные адреса от браузера не принимает. Файл скачивается потоково на внутренний диск.
-- Предыдущий сохранённый ELF остаётся как /data/titan-core/titan-core.previous.elf. Запущенные игры и установка PKG блокируют подготовку обновления. Служебный YouTube/Y2JB не считается игрой и не блокирует обновлятор.
-- Сохранены компоненты Fix5: Kraken Mount 0.2.1, AMPR 0.4.1, ShadowMountPlus 1.7beta12-titan-isolated4 и kstuff-lite 1.11.
+- Название интерфейса, плитки и уведомлений: TITAN. Новый адрес репозитория: https://github.com/grimmtroll2285-dot/TITAN. Внутренние пути /data/titan-core, кэши, настройки и идентификаторы движков сохранены для совместимости.
+- Настройки → PlayGo: отдельный видимый блок, поиск и галочки напротив игр. Включённая галочка разрешает PlayGo от TITAN; выключенная оставляет библиотеку игры. Вводить Title ID больше не нужно. Существующие исключения, включая игры на отключённых дисках, сохраняются. Выбор общий для одного Title ID. Для новых игр PlayGo разрешён по умолчанию; общий переключатель PlayGo и inject_ampr сохраняют приоритет.
+- Вкладка «Бэкпорты» показывает библиотеку и подбирает патчи для родного движка TITAN по Title ID, точной версии, диапазону прошивки, формату и модели PS5/Slim или Pro. Поддерживаются PS5 PKG и папки; установка патчей для образов ShadowMount пока недоступна.
+- Скачивание патча запускает пользователь. Проверяются размер и SHA-256 каждого файла, безопасные пути и совпадение идентификатора/версии в param.json. Оригинальные PKG, игры и сохранения не перезаписываются.
+- Скачанные файлы хранятся отдельно. Применение и возврат предыдущего выбора требуют полной перезагрузки PS5; простой перезапуск TITAN недостаточен. Есть отключение и отмена ожидающего изменения. Повреждённый новый комплект не заменяет предыдущий выбор.
+- Собственный каталог TITAN подключён по умолчанию: https://raw.githubusercontent.com/grimmtroll2285-dot/TITAN/main/backports/catalog.json. Автоматическая проверка через 35 секунд после старта и каждые 30 минут; установки без нажатия кнопки нет. Можно добавить свои каталоги GitHub или импортировать JSON. В исходниках есть упаковщик папки/ZIP в каталог с SHA-256.
+- Добавлены справочные ссылки на BackPork, PS5 Backport Toolkit и PS5 Game Updater. Это инструменты и информация, а не совместимые каталоги автоматической установки. На 18.11.2026 публичный verified-seed.json Game Updater пуст; BackPork публикует BPS-патчи, требующие исходных библиотек.
 
-## Первый запуск FIX6
+**Каталог TITAN пока пуст: готовых проверенных игровых бэкпортов в FIX7 нет.** Подбор и загрузка появятся для игры после добавления подходящего комплекта в подключённый каталог. Совместимость каждого бэкпорта требует отдельной проверки. Вкладка не генерирует патчи и не скачивает целые игры.
 
-1. Скачайте **TITAN-CORE-SirenaGoloviy-fix6.elf**. Закройте игры, полностью перезагрузите PS5 и запустите его через Payload Manager.
-2. Для объединённой сборки отключите отдельный автозапуск Kraken/ShadowMount. Существующий jailbreak/elfldr оставьте.
-3. Откройте http://IP_ПС5:8097 и дождитесь готовности. Не запускайте игру во время подготовки или пересборки кэша.
-4. Откройте «Обновления», выберите выпуск и нажмите «Скачать на консоль» либо кнопку установки/обновления/отката.
-5. Установка только подготавливает /data/titan-core/titan-core.elf. Для применения полностью перезапустите консоль, затем запустите TITAN через его сохранённую плитку. Текущий процесс и службы не заменяются на ходу.
+## Переход с FIX6 после переименования репозитория
 
-**Старый ELF в Payload Manager или автозагрузке может перезаписать подготовленную версию. Обновите этот источник отдельно.** После отката на выпуск без обновлятора его интерфейс тоже исчезнет; для возвращения на FIX6 загрузите новый ELF обычным способом. Резервный ELF — ручной способ восстановления через рабочий загрузчик, не автоматический откат при сбое загрузки.
+1. Загрузите TITAN-SirenaGoloviy-fix7.elf из Assets вручную. Старый обновлятор FIX6 жёстко проверяет адреса прежнего репозитория и может перестать видеть выпуски после переименования. Автоматический переход с FIX6 не обещается.
+2. Закройте игры, полностью перезагрузите PS5 и запустите новый ELF через Payload Manager. Обновите также старый файл в автозагрузке/локальном источнике Payload Manager, иначе он может снова сохранить старую сборку.
+3. Откройте http://IP_ПС5:8097 и дождитесь готовности. Для объединённой сборки отдельный автозапуск Kraken/ShadowMount не нужен. Существующий jailbreak/elfldr оставьте.
+4. Для PlayGo: «Настройки → PlayGo», выберите игры и нажмите «Сохранить». Закройте игры и дождитесь готовности кэша перед запуском.
+5. У обновлятора FIX7 новый адрес TITAN. Доступны стабильные/pre-release и выбор версии для обновления/даунгрейда. При откате на FIX6 старый адрес обновлятора возвращается: для перехода обратно на FIX7 может снова понадобиться ручная загрузка.
 
-Каталог с аватаркой для Payload Manager: [payloads.json](https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/download/fix6/payloads.json). Добавьте адрес через Settings → Manage Sources → Add Source.
+Каталог Payload Manager с аватаркой: https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix7/payloads.json
 
-## Проверки и пределы
+## Проверки и ограничения
 
-Пройдены **72 теста Rust, 8 тестов PKG и 11 тестов JavaScript**. Проверены типы PS5, локализация и синтаксис встроенного интерфейса. Обе стадии ELF собраны; результаты проверки структуры, вложенных компонентов и SHA-256 находятся в validation.json.
+81 переносимый тест Rust, 8 тестов PKG, 20 JavaScript и 3 Python: всего 112. Проверены типы PS5, локализация, синтаксис встроенного JavaScript и интерфейс на синтетических данных. Обе стадии ELF, вложенный stage1, компоненты и SHA-256 проверены отдельно в validation.json.
 
-**Обновлятор, его перезапуск и именно этот объединённый ELF ещё не проверены на реальной PS5.** Метка обычного релиза выбрана владельцем сборки и не заменяет проверку на консоли. Совместимость большинства игр, исправление 007/MGS 4/Yōtei и производительность не подтверждены. PlayGo не восстанавливает лицензии. Ранее отмеченная гонка запуска игры во время пересборки кэша остаётся открытой. Не запускайте игру до завершения подготовки.
+**Новая сборка, загрузка бэкпортов, перезагрузка и откат на реальной PS5 не проверены.** Тесты ПК не подтверждают запуск игр. Существующая гонка запуска игры во время пересборки кэша остаётся открытой: не запускайте игру до Ready. PlayGo не исправляет лицензии и не гарантирует работу MGS 4, 007, Yōtei или большинства игр. Сторонние патчи проверяйте на точное соответствие своей версии/прошивке/модели.
 
-Для нативного движка нужны поддерживаемые PS5 debug/plaintext PKG. PS4, retail/encrypted, AES-XTS и отдельные LIH-патчи им не поддерживаются. Внешний диск с оригиналом должен оставаться подключённым; внутреннему кэшу всё ещё нужно место. Защита YouTube сохранена, но ранее изменённые иконки или удалённые файлы автоматически не восстанавливаются.
+Сохранены компоненты FIX6: Kraken Mount 0.2.1, AMPR 0.4.1, оригинальный drakmor PlayGo Stub 0.6, ShadowMountPlus 1.7beta12-titan-isolated4, kstuff-lite 1.11. Отдельные экспериментальные изменения расследования PKG/fakelib2 сюда не включены. Native PS4, retail/encrypted PKG, AES-XTS и отдельные LIH-патчи не добавлены. Игра с внешнего диска требует подключённого оригинала и внутреннего кэша.
 
-Подробное устройство и ограничения обновлятора: CONSOLE-UPDATER.md. Полные соответствующие исходники — **TITAN-CORE-SirenaGoloviy-fix6-source.zip** в Assets. Автоматический GitHub Source code содержит страницу распространения, а не полный исходный код ELF. Лицензии и авторство upstream сохранены. Предыдущие [Fix5](https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/tag/fix5) и [PlayGo pre-release](https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/tag/fix6-playgo-pre1) доступны для отката.
+Полные соответствующие исходники: TITAN-SirenaGoloviy-fix7-source.zip в Assets. Автоматический GitHub Source code содержит страницу распространения, а не полный исходный код ELF. Авторство и лицензии upstream сохранены.
 
 ## English
 
-FIX6 1.0.4 combines the previous PlayGo integration with an on-console version selector and updater. Stable and pre-release builds are shown by default. Metadata checks run after startup and every 30 minutes even with the UI closed. Downloads and installation are manual; upgrading, downgrading and reinstalling are supported.
+FIX7 1.0.5 renames the app/repository to TITAN, adds named PlayGo game checkboxes and catalog-backed native PS5 PKG/folder backport management. Exact compatibility matching, per-file SHA-256, separate immutable overlays and reboot-deferred selection/rollback are implemented. ShadowMount image installation is not supported by this catalog yet. The default project catalog is connected but currently contains zero verified game backports; three reference projects are clearly labeled as tools/information, not installable feeds.
 
-Close games, choose a release in Updates, and download or install it. The updater validates the repository asset, size, SHA-256 and ELF structure, keeps the previous saved ELF, and prepares the saved TITAN launch file. Fully reboot and launch the saved TITAN tile to activate it. Resident services are never hot-swapped. An old Payload Manager/autoload ELF can overwrite that saved file: update its source separately. Downgrading to a version without this updater removes its UI until a newer ELF is loaded again. The previous ELF is a manual recovery file, not automatic boot rollback.
+After the repository rename, FIX6's pinned URL checks can prevent its updater from listing releases. Load FIX7 manually once, and update any old autoload/Payload Manager copy. FIX7's updater uses the new TITAN address and also recognizes historical TITAN-CORE asset filenames. Downgrading restores that old release's updater behavior. Data paths and existing settings stay compatible.
 
-Unmodified drakmor PlayGo Stub 0.6 is enabled for native titles when inject_ampr is enabled, with a global switch and per-title exclusions. Manual PlayGo overrides take precedence. No original PKG or save is removed. ShadowMount-owned images retain their existing runtime policy. Fix5 service binaries are unchanged.
-
-**72 Rust + 8 PKG + 11 JavaScript tests passed; both ELF stages built, PS5 types, localization, embedded artifacts and SHA-256 were checked. This combined ELF and the console updater/reboot flow have not been tested on a real PS5.** Specific games, licenses, crash fixes and performance are not guaranteed. The existing mid-build launch race remains open; wait for preparation to finish before starting games.
-
-Use the separately named source ZIP in Assets for complete matching sources, not GitHub's automatic Source code archive. Original authorship, GPL PlayGo source and RustCrypto dependency sources/licenses are included.
+112 host tests passed. Both ELF stages and embedded components are verified in validation.json. This new build and the console backport/download/reboot/rollback flow have not been hardware-tested. Original PKGs and saves are not overwritten; close games and wait for Ready before playing. Complete corresponding source, licenses and the catalog packager are in the separately named source ZIP asset.
