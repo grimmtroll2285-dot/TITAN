@@ -1,18 +1,82 @@
 {
+  "version": "1.0.4",
+  "release_tag": "fix6",
+  "prerelease": false,
+  "base": "Fix5 1.0.3 + Fix6 PlayGo pre1 + console updater",
   "stage1": {
-    "bytes": 9749264,
-    "sha256": "df2524c7a90709c14ea435eaff2cc57e6fac3d36a85428488d16e3d151af6bbf"
+    "bytes": 10437520,
+    "sha256": "0c7583de619e908d98f30eb704aa8a90bafe346fb6f22e59b6c490b343c187a8",
+    "entry": "0x1961f4",
+    "type": "ELF64 x86-64 ET_DYN"
   },
   "stage2": {
-    "bytes": 19497744,
-    "sha256": "127c87e640bc755710c2ec72c6af85f0891b42cf0291ee569478d595385fba71"
+    "bytes": 20874128,
+    "sha256": "a5efa9861df0c57b66fbac2819af6583a88513b1bd8db6d4bb0ec50e6edd09b2",
+    "entry": "0x196464",
+    "type": "ELF64 x86-64 ET_DYN"
   },
-  "tests_passed": 124,
-  "ownership_harness_passed": true,
-  "automatic_uninstall_symbol_check_passed": true,
+  "stage1_embedded_exactly": true,
+  "components": {
+    "vendor/playgo/libScePlayGo.sprx": {
+      "bytes": 18150,
+      "sha256": "f5fdb0ed6cc7413e6dcac79a62e0efd8cfbae04cca0bf932e7a741aed850d213"
+    },
+    "vendor/ampr-emu-ng/libSceAmpr.sprx": {
+      "bytes": 732928,
+      "sha256": "f35dea9c96cdeb4a2acf47531b55a68c00d53a4be7f35611f55fcdf8c3edb309"
+    },
+    "vendor/unified/shadowmountplus-1.7beta12-titan-isolated4.elf": {
+      "bytes": 3577328,
+      "sha256": "655585bb0ec50e1c03b03b1b63b1360a3ea937ca62397823565afe681a6f4412"
+    },
+    "vendor/unified/kstuff-lite-v1.11.elf": {
+      "bytes": 1737080,
+      "sha256": "ab9a6cb4d3b1daf139d4d646e402b1cf569071acd64599c936d7a3a6164dc779"
+    }
+  },
+  "tests": {
+    "portable_rust": 72,
+    "pkg_reader": 8,
+    "javascript_policy_and_ui": 11,
+    "total": 91,
+    "production_updater_validated_both_built_elfs": true,
+    "synthetic_browser_downgrade_selection_and_prepared_status": "passed",
+    "localization_and_js_syntax": "passed"
+  },
+  "ps5_typecheck": "passed",
   "build_warnings": [],
-  "runtime_changed": false,
+  "compiler_jobs": 2,
   "hardware_tested": false,
-  "shadowmount_version": "1.7beta10-titan-isolated3",
-  "shadowmount_sha256": "4c1afcc437e960b9fcf54fd1f81e4a5d4d049950b9923a707660bb7753f0be07"
+  "console_updater_hardware_tested": false,
+  "playgo_upstream_modified": false,
+  "shadowmount_version": "1.7beta12-titan-isolated4",
+  "updater": {
+    "repository": "grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy",
+    "automatic_metadata_check_seconds": 1800,
+    "initial_delay_seconds": 20,
+    "default_channels": [
+      "stable",
+      "prerelease"
+    ],
+    "manual_actions": [
+      "download",
+      "install",
+      "upgrade",
+      "downgrade",
+      "reinstall"
+    ],
+    "digest": "SHA-256 via RustCrypto sha2 0.10.9",
+    "previous_saved_elf": "/data/titan-core/titan-core.previous.elf",
+    "activation": "full reboot then saved TITAN tile; stale external autoload ELF must be updated separately",
+    "max_payload_bytes": 67108864
+  },
+  "known_limits": [
+    "Combined ELF and updater HTTPS/download/install/reboot have not been console-tested",
+    "007 / MGS4 / Yotei fixes and performance not verified; no license repair",
+    "Mid-build launch race remains open; wait until preparation finishes before playing",
+    "No automatic boot rollback; old autoload ELF may overwrite prepared saved copy",
+    "Downgrading to a release without updater removes updater UI until a newer ELF is loaded",
+    "Console filesystem directory-sync and power-loss behavior require hardware testing",
+    "Native PS5 runtime only; ShadowMount-owned images retain existing runtime policy"
+  ]
 }

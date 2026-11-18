@@ -1,36 +1,13 @@
-# Проверки Fix3
+# FIX6 1.0.4 validation
 
-## Реально выполнено
+This page describes only this release. Historical validation remains in the older release assets.
 
-- 124 локальных теста TITAN прошли.
-- Отдельный C-тест механизма владения прошёл: исключения YouTube, валидация ID,
-  независимость игр, одновременные повторные запросы и ограничение ёмкости.
-- Сканирующие объекты custom ShadowMount проверены на отсутствие ссылки
-  AppUnInstall; явный ручной API удаления сохранён.
-- Две стадии ELF собраны без предупреждений с Rust1.99, LLVM19 и PS5 SDK0.43,
-  с ограничением до двух задач компилятора.
-- Проверены границы ELF, исполняемая точка входа, вложенный stage1,
-  точный runtime и служба, подпись, SHA-256 и целостность исходного ZIP.
-- Неизменённый AMPR0.4.1 ранее прошёл 191 тест; в цикле Fix3 они не повторялись.
+- 72 portable Rust tests passed, including PlayGo policy/settings, metadata/source handling, release validation, YouTube game-guard exclusions, SHA-256 and saved-payload transactions.
+- 8 PKG library tests passed.
+- 11 JavaScript tests passed: release filtering/selection, upgrade/downgrade requests, errors, UI progress, selection retention and literal release notes.
+- PS5 target cargo check passed; bundled UI JavaScript syntax and localization placeholders validated for 31 selectable locales.
+- Final two-stage build, vendor provenance/hash checks and binary inspection are recorded in validation.json.
 
-## Что не подтверждено
+No console gameplay or on-console update/download/reboot validation has been performed for this exact combined ELF. No game-specific crash, license, performance or majority-compatibility success is claimed. The existing mid-build launch race remains open. Wait until preparation finishes before launching a game.
 
-`hardware_tested=false`: именно этот Fix3 на реальной PS5 локально не проверялся.
-Ранее пользователь сообщил успешный запуск игр на предыдущей сборке, затем
-сообщил о смене иконки YouTube и зависании закрытия. Кумулятивные журналы не
-доказывают одну конкретную причину: в последнем сеансе игры есть exec, но нет
-события выхода и очистки. Исчезновение иконок также не привязано в журнале к
-доказанному событию автоматического удаления. Поэтому исправление симптомов
-пока нельзя считать подтверждённым консольным тестом.
-
-## Опубликованный ELF
-
-Размер: 19 497 744 байта.
-
-```text
-SHA-256 127c87e640bc755710c2ec72c6af85f0891b42cf0291ee569478d595385fba71
-```
-
-Точный JSON: [validation.json](https://github.com/grimmtroll2285-dot/TITAN-CORE-SirenaGoloviy/releases/download/fix3-standard/validation.json).
-В архиве исходников сохранены журналы локальной сборки и тестов.
-Персональные пользовательские журналы консоли не публикуются.
+See CONSOLE-UPDATER.md and the named full source ZIP in the FIX6 release for implementation and limits. GitHub automatic source archives are only the distribution repository.
