@@ -9,6 +9,7 @@
 # TITAN · FIX7 · 1.0.5 · SirenaGoloviy
 
 PLAY NO LIMIT by SirenaGoloviy
+donate: 2200700949917206 💳
 
 TITAN CORE переименован в TITAN. В этой версии собраны вкладка бэкпортов и выбор PlayGo по списку игр поверх FIX6.
 
