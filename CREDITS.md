@@ -16,7 +16,7 @@ Thank you to **quer3q**, **EchoStretch**, **drakmor**, the **PS5 payload SDK con
 
 | Component | Upstream | Role |
 |---|---|---|
-| Kraken Mount 0.2.1 | [quer3q/kraken-mount](https://github.com/quer3q/kraken-mount) | Native FPKG/folder mounting, cache, registration and launch code used and adapted in TITAN CORE |
+| Kraken Mount 0.3.0 (TITAN integration) | [quer3q/kraken-mount](https://github.com/quer3q/kraken-mount) | Native FPKG/folder mounting, cache, registration and launch code used and adapted in TITAN CORE |
 | ampr-emu-ng 0.4.1 | [quer3q/ampr-emu-ng](https://github.com/quer3q/ampr-emu-ng/tree/v0.4.1) | Packed-game runtime; custom launch notice `PLAY NO LIMIT` (component UI label `chmod v0.1`) |
 | kstuff-lite 1.11 | [EchoStretch/kstuff-lite](https://github.com/EchoStretch/kstuff-lite/releases/tag/v1.11) | Pinned resident payload, embedded unchanged |
 | ShadowMountPlus 1.7beta10 | [drakmor/ShadowMountPlus](https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta10) | Pinned image service, embedded unchanged |
@@ -67,3 +67,7 @@ The TITAN/SirenaGoloviy catalog format, packaging tool, UI and native managed-ov
 ## TITAN FIX7 branding
 
 The owner renamed the current distribution and UI to TITAN and its repository to grimmtroll2285-dot/TITAN. The original TITAN CORE project authorship above is retained. Internal data paths and engine identifiers stay compatible; vendor binaries and PlayGo remain unchanged.
+
+## Kraken Mount 0.3.0 integration
+
+FIX8 incorporates selected runtime, scanner, registration, USB and metadata changes from quer3q/kraken-mount v0.3.0 (e1e784560fe3a56e3b5ffd579f47ed5b2cf194f7), retaining GPL-3.0 authorship. See docs/KRAKEN_0_3_0_UPGRADE.md for exact integration boundaries, including the excluded dlc_emu binary. No new PlayGo binary or AMPR binary is substituted.

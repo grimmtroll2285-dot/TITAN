@@ -52,3 +52,6 @@ syntax check, and synthetic Chromium checkbox/save/reload round-trip. A saved
 checkbox change produced the expected playgo_exclude array without deleting
 another title's existing choice. Desktop and 390-pixel layout checked. This UI change is included in the two-stage FIX7 release build; no console
 gameplay or actual console settings round-trip is claimed.
+
+
+FIX8: automatic injection checks eboot imports; unknown existing game modules stay. Known Stub 0.4/0.5 upgrades to 0.6. Named selection and manual AMPR override remain. PKG AMPR reader is required regardless of inject_ampr; optional PlayGo still follows its configured gates. See KRAKEN_0_3_0_UPGRADE.md.

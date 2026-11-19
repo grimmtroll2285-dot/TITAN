@@ -1,21 +1,48 @@
 {
-  "version": "1.0.5",
-  "release_tag": "fix7",
+  "product_name": "TITAN",
+  "version": "1.0.6",
+  "release_tag": "fix8",
   "repository": "grimmtroll2285-dot/TITAN",
   "prerelease": false,
-  "product_name": "TITAN",
-  "base": "FIX6 + native backports catalog + PlayGo game selection",
+  "upstream": {
+    "project": "quer3q/kraken-mount",
+    "tag": "v0.3.0",
+    "commit": "e1e784560fe3a56e3b5ffd579f47ed5b2cf194f7",
+    "official_elf_sha256": "092623a204b707b89d0867a0087f9dd1c430eef6a22db497f03b59aaf1297bfe",
+    "integration": "selected source changes over TITAN FIX7; no separate Kraken ELF launched",
+    "excluded": "bundled dlc_emu 0.3 due documented unresolved upstream RPC issues"
+  },
   "stage1": {
-    "bytes": 10650608,
-    "sha256": "4b0842a0c94f62060103a2fd3c2ab40dd26c9b2392733bc6ba001e4fe569a3b3",
-    "entry": "0x1a36b4"
+    "bytes": 10716208,
+    "sha256": "ca5f8a1274b7c7342f7a72df74f09f7f608f45d800b4196478973d834cfdda85",
+    "entry": "0x1acc58"
   },
   "stage2": {
-    "bytes": 21300208,
-    "sha256": "1cc52e2462fff8c488a9887fbd0126aa70ab265f6c1fa756ecc1b1a580df73d3",
-    "entry": "0x1a3904"
+    "bytes": 21447728,
+    "sha256": "f1699fce00d212d04f58cd4a13fee92752a0a0cf9080ea38e988a89f35384740",
+    "entry": "0x1acea8"
   },
   "stage1_embedded_exactly": true,
+  "tests": {
+    "portable_rust": 89,
+    "pkg_rust": 8,
+    "javascript": 23,
+    "python": 3,
+    "total": 123
+  },
+  "checks": {
+    "ps5_typecheck": true,
+    "build_warnings": 0,
+    "production_updater_verifies_both_stages": true,
+    "bundled_javascript_syntax": true,
+    "vendor_hashes": true,
+    "synthetic_ui_settings_save": true
+  },
+  "defaults": {
+    "auto_remove_missing": true,
+    "auto_remove_delay_seconds": 300,
+    "stability_wait_seconds": 10
+  },
   "components": {
     "vendor/playgo/libScePlayGo.sprx": {
       "bytes": 18150,
@@ -34,36 +61,14 @@
       "sha256": "ab9a6cb4d3b1daf139d4d646e402b1cf569071acd64599c936d7a3a6164dc779"
     }
   },
-  "tests": {
-    "portable_rust": 81,
-    "pkg": 8,
-    "javascript": 20,
-    "python": 3,
-    "total": 112,
-    "production_updater_verifies_both_elfs": true,
-    "bundled_javascript_syntax": "passed",
-    "ps5_typecheck": "passed without warnings",
-    "localization": "497 entries; 31 selectable locales; explicit technical fallback"
-  },
-  "build_warnings": [],
-  "compiler_jobs": 2,
-  "hardware_tested": false,
-  "backports": {
-    "default_catalog": "https://raw.githubusercontent.com/grimmtroll2285-dot/TITAN/main/backports/catalog.json",
-    "game_entries": 0,
-    "reference_projects": 3,
-    "native_pkg_folder_install_supported": true,
-    "shadowmount_image_install_supported": false,
-    "activation": "different boot required",
-    "original_game_files_modified": false
-  },
-  "rename_migration": "FIX6 pinned repository/asset URL checks can block update discovery after rename; manually load FIX7 once and replace old autoload sources",
+  "console_tested": false,
   "known_limits": [
-    "New ELF and console downloader/boot/rollback not hardware-tested",
-    "No verified game backports included",
-    "Image backport installation unsupported",
-    "Existing mid-build launch race remains; wait for Ready",
-    "Experimental separate PKG/fakelib2 audit excluded",
-    "Backport directory sync/power-loss behavior requires console validation"
+    "No real-PS5 FIX8 gameplay, save, auto-unregister, USB eject or updater-reboot acceptance test performed",
+    "PlayGo searches eboot imports only; unknown game libraries kept; per-game exclusion and manual override retained",
+    "USB eject blocked for foreign ShadowMount folders/images or unavailable inventory; firmware IPMI requires hardware validation",
+    "Close games and wait for Ready; existing mid-refresh launch race is not declared fixed",
+    "No dlc_emu 0.3 bundled; no verified game backports bundled; default catalog file currently unavailable",
+    "Auto-unregister only owned absent-source tiles; installed PKG/YouTube/foreign ownership protected; cache retained",
+    "Full source is separately named archive; GitHub automatic source ZIP is distribution repository only"
   ]
 }
