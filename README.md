@@ -12,6 +12,12 @@ TITAN — объединённая надгрузка для PS5 с веб-ин�
 
 **[Скачать FIX8 ELF](https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix8/TITAN-SirenaGoloviy-fix8.elf)** · [Описание релиза и все файлы](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix8) · [SHA-256](https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix8/SHA256SUMS.txt)
 
+## Тестовая версия: FIX9 pre1 · PKG только из homebrew
+
+[Скачать pre-release FIX9 pre1](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix9-pre1) · [Изменения и установка](PRERELEASE_FIX9_PRE1.md)
+
+В этой тестовой сборке внешние архивы PKG запускаются только из `<диск>/homebrew` и подпапок. PKG из корня и других папок игнорируются; внутренние и установленные системные игры сохраняют прежние пути. Новые внешние установки TITAN также размещаются внутри `homebrew`. Файлы автоматически не перемещаются и не удаляются. Для перехода нужна полная перезагрузка. Стабильный FIX8 остаётся основным выпуском; pre-release на реальной PS5 ещё не проверен.
+
 ## Что нового в FIX8
 
 Интегрированы изменения **Kraken Mount 0.3.0** поверх TITAN FIX7:
