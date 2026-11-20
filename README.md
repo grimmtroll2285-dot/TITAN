@@ -26,13 +26,23 @@ donate: 2200700949917206 💳
 
 ### 📥 Скачать TITAN
 
-**Стабильная версия: FIX8 (1.0.6)**
+**Стабильная версия: FIX10 (1.0.8)**
 
-[⬇️ Скачать TITAN FIX8](https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix8/TITAN-SirenaGoloviy-fix8.elf)
+[⬇️ Скачать TITAN FIX10](https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix10/TITAN-SirenaGoloviy-fix10.elf)
 
 **Тестовая версия: FIX9 pre1**
 
 [🧪 Скачать предварительную сборку](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix9-pre1)
+
+### Что нового в FIX10
+
+Встроены **Kraken Mount 0.3.1** и **AMPR 0.5.0**: пакетная регистрация на FW 12+, копирование метаданных блоками 1 МиБ, поиск на уровень папок глубже и переключатель PlayGo в карточке игры. Обновлятор, бэкпорты, именные галочки PlayGo и защиты сохранены.
+
+Внешние архивы PKG размещайте только в **homebrew** в корне диска и её подпапках. Перед обновлением закройте игры и полностью перезагрузите консоль; дождитесь Ready перед запуском игры.
+
+**128 тестов на ПК прошли. На реальной PS5 FIX10 ещё не проверен; ускорение и исправления конкретных игр не подтверждены для этой сборки.**
+
+[Все файлы FIX10, исходники и результаты проверок](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix10)
 
 ### ⚙️ Совместимость и требования
 
@@ -58,3 +68,4 @@ donate: 2200700949917206 💳
 Developed by **SirenaGoloviy**.
 
 Built on open-source technologies and contributions from the PS5 homebrew community.
+
