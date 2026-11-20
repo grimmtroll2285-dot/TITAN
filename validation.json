@@ -1,74 +1,81 @@
 {
-  "product_name": "TITAN",
-  "version": "1.0.6",
-  "release_tag": "fix8",
+  "version": "1.0.8",
+  "tag": "fix10",
+  "base": "fix9-pre1",
   "repository": "grimmtroll2285-dot/TITAN",
   "prerelease": false,
-  "upstream": {
-    "project": "quer3q/kraken-mount",
-    "tag": "v0.3.0",
-    "commit": "e1e784560fe3a56e3b5ffd579f47ed5b2cf194f7",
-    "official_elf_sha256": "092623a204b707b89d0867a0087f9dd1c430eef6a22db497f03b59aaf1297bfe",
-    "integration": "selected source changes over TITAN FIX7; no separate Kraken ELF launched",
-    "excluded": "bundled dlc_emu 0.3 due documented unresolved upstream RPC issues"
-  },
   "stage1": {
-    "bytes": 10716208,
-    "sha256": "ca5f8a1274b7c7342f7a72df74f09f7f608f45d800b4196478973d834cfdda85",
-    "entry": "0x1acc58"
+    "bytes": 10716176,
+    "sha256": "89531fee6476e25cdd4703f5d3d25bbb1dcea5c4402a21c6c3b234f61b1bdf7b",
+    "entry": "0x1ae7ac",
+    "type": "ELF64 x86-64 ET_DYN",
+    "executable_entry": true,
+    "needed": [
+      "libkernel_web.sprx",
+      "libSceLibcInternal.sprx",
+      "libSceNet.sprx",
+      "libSceHttp.sprx",
+      "libSceSsl.sprx",
+      "libSceSystemService.sprx",
+      "libSceUserService.sprx",
+      "libSceNotification.sprx",
+      "libSceAppInstUtil.sprx",
+      "libSceIpmi.sprx"
+    ]
   },
   "stage2": {
-    "bytes": 21447728,
-    "sha256": "f1699fce00d212d04f58cd4a13fee92752a0a0cf9080ea38e988a89f35384740",
-    "entry": "0x1acea8"
+    "bytes": 21431312,
+    "sha256": "fa255a452dcc4412178e89fe5beaf119017d7904c66ac70b6aeb400b8200a220",
+    "entry": "0x1aea0c",
+    "type": "ELF64 x86-64 ET_DYN",
+    "executable_entry": true,
+    "needed": [
+      "libkernel_web.sprx",
+      "libSceLibcInternal.sprx",
+      "libSceNet.sprx",
+      "libSceHttp.sprx",
+      "libSceSsl.sprx",
+      "libSceSystemService.sprx",
+      "libSceUserService.sprx",
+      "libSceNotification.sprx",
+      "libSceAppInstUtil.sprx",
+      "libSceIpmi.sprx"
+    ]
+  },
+  "embedded_components": {
+    "unified/kstuff-lite-v1.11.elf": "ab9a6cb4d3b1daf139d4d646e402b1cf569071acd64599c936d7a3a6164dc779",
+    "unified/shadowmountplus-1.7beta12-titan-isolated4.elf": "655585bb0ec50e1c03b03b1b63b1360a3ea937ca62397823565afe681a6f4412",
+    "ampr-emu-ng/libSceAmpr.sprx": "7379e49953d8f14f26b45ff06a863ecea56aa90a60ba3d5a375f61c52618a174",
+    "playgo/libScePlayGo.sprx": "f5fdb0ed6cc7413e6dcac79a62e0efd8cfbae04cca0bf932e7a741aed850d213"
   },
   "stage1_embedded_exactly": true,
+  "ui_source_embedded_exactly": true,
   "tests": {
-    "portable_rust": 89,
-    "pkg_rust": 8,
-    "javascript": 23,
-    "python": 3,
-    "total": 123
+    "portable_rust": 93,
+    "pkg_library": 8,
+    "javascript": 27,
+    "passed": 128
   },
-  "checks": {
-    "ps5_typecheck": true,
-    "build_warnings": 0,
-    "production_updater_verifies_both_stages": true,
-    "bundled_javascript_syntax": true,
-    "vendor_hashes": true,
-    "synthetic_ui_settings_save": true
+  "hardware_tested": false,
+  "console_benchmarks_run": false,
+  "windows_test_limits": [
+    "Unix symlink assertions not executed",
+    "Directory fsync not exercised on Windows; PS5 Unix implementation retained"
+  ],
+  "known_limitations": [
+    "Native PKG runtime remains experimental",
+    "Mid-build game launch race remains; wait for Ready",
+    "No specific 007/PPSA11386 crash fix confirmed"
+  ],
+  "toolchain": {
+    "rust": "1.99.0",
+    "llvm": "19.1.7",
+    "sdk": "0.43",
+    "host": "Windows",
+    "compiler_jobs": 2
   },
-  "defaults": {
-    "auto_remove_missing": true,
-    "auto_remove_delay_seconds": 300,
-    "stability_wait_seconds": 10
-  },
-  "components": {
-    "vendor/playgo/libScePlayGo.sprx": {
-      "bytes": 18150,
-      "sha256": "f5fdb0ed6cc7413e6dcac79a62e0efd8cfbae04cca0bf932e7a741aed850d213"
-    },
-    "vendor/ampr-emu-ng/libSceAmpr.sprx": {
-      "bytes": 732928,
-      "sha256": "f35dea9c96cdeb4a2acf47531b55a68c00d53a4be7f35611f55fcdf8c3edb309"
-    },
-    "vendor/unified/shadowmountplus-1.7beta12-titan-isolated4.elf": {
-      "bytes": 3577328,
-      "sha256": "655585bb0ec50e1c03b03b1b63b1360a3ea937ca62397823565afe681a6f4412"
-    },
-    "vendor/unified/kstuff-lite-v1.11.elf": {
-      "bytes": 1737080,
-      "sha256": "ab9a6cb4d3b1daf139d4d646e402b1cf569071acd64599c936d7a3a6164dc779"
-    }
-  },
-  "console_tested": false,
-  "known_limits": [
-    "No real-PS5 FIX8 gameplay, save, auto-unregister, USB eject or updater-reboot acceptance test performed",
-    "PlayGo searches eboot imports only; unknown game libraries kept; per-game exclusion and manual override retained",
-    "USB eject blocked for foreign ShadowMount folders/images or unavailable inventory; firmware IPMI requires hardware validation",
-    "Close games and wait for Ready; existing mid-refresh launch race is not declared fixed",
-    "No dlc_emu 0.3 bundled; no verified game backports bundled; default catalog file currently unavailable",
-    "Auto-unregister only owned absent-source tiles; installed PKG/YouTube/foreign ownership protected; cache retained",
-    "Full source is separately named archive; GitHub automatic source ZIP is distribution repository only"
-  ]
+  "source_zip": {
+    "sha256": "66efb8afca1297137791f0ae9beabf54451b9762fdb10eed702b1c3554d8fd07",
+    "bytes": 48744027
+  }
 }

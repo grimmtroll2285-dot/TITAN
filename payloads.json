@@ -1,21 +1,20 @@
 {
-  "name": "TITAN · SirenaGoloviy · FIX8",
-  "icons_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix8/icons.json",
+  "name": "TITAN · SirenaGoloviy",
+  "icons_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix10/icons.json",
   "payloads": [
     {
-      "id": "titan-core-sirenagoloviy",
-      "name": "TITAN · FIX8 · Kraken 0.3.0",
-      "filename": "TITAN-SirenaGoloviy-fix8.elf",
-      "url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix8/TITAN-SirenaGoloviy-fix8.elf",
-      "version": "1.0.6",
-      "last_update": "2026-11-19",
+      "id": "titan-sirenagoloviy",
+      "name": "TITAN · SirenaGoloviy",
+      "filename": "TITAN-SirenaGoloviy-fix10.elf",
+      "url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix10/TITAN-SirenaGoloviy-fix10.elf",
+      "version": "1.0.8",
+      "last_update": "2026-11-20",
       "category": "Games",
-      "author": "SirenaGoloviy · upstream authors credited in source",
-      "description": "Kraken Mount 0.3.0 source integration: save safety, required PKG reader, conditional PlayGo, missing-source tile cleanup and guarded USB eject. Real-console validation pending.",
-      "checksum": "f1699fce00d212d04f58cd4a13fee92752a0a0cf9080ea38e988a89f35384740",
-      "icon_key": "titan-fix8-avatar",
-      "source": "https://github.com/grimmtroll2285-dot/TITAN",
-      "details_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix8/README.txt"
+      "author": "SirenaGoloviy; upstream authors credited",
+      "description": "FIX10: Kraken 0.3.1 + AMPR 0.5.0, batch registration, PlayGo controls. Console validation pending.",
+      "checksum": "fa255a452dcc4412178e89fe5beaf119017d7904c66ac70b6aeb400b8200a220",
+      "icon_key": "titan-fix10",
+      "details_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix10/README.txt"
     }
   ]
 }

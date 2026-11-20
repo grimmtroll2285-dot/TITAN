@@ -1,45 +1,49 @@
+# TITAN · FIX10 · 1.0.8
+
 **PLAY NO LIMIT by SirenaGoloviy**
 
-**TITAN FIX8 · 1.0.6 · Kraken Mount 0.3.0**
+## Русский
 
-Интеграция изменений Kraken Mount 0.3.0 поверх FIX7 с сохранением настроек, обновлятора, бэкпортов и выбора PlayGo по играм.
+Обновили движок до Kraken Mount 0.3.1 и встроили официальный AMPR 0.5.0. База — опубликованный FIX9 pre1: обновлятор, откат, бэкпорты, выбор PlayGo по названиям игр и ограничения внешних PKG сохранены.
 
-## Что изменилось
+### Что нового
+- На FW 12+ игры подготавливаются за проход сканирования и регистрируются одним вызовом AppInstallAll, если отдельная регистрация TitleDir недоступна. Для пакета показывается одно уведомление. Вызов обновляет регистрацию метаданных глобально, как в upstream; TITAN подготавливает и отслеживает свои игры и сохраняет проверки владения и занятых монтирований.
+- Метаданные копируются блоками 1 МиБ с сохранением нашей атомарной записи.
+- Поиск видит игры на один уровень папок глубже. Существующий приоритет внутренних установленных PKG сохранён; обычная вложенная копия не заменяет найденную непосредственно в корне.
+- В карточке игры появился переключатель PlayGo stub. Он меняет только выбранную игру, сохраняет прежние исключения и блокируется во время игры или при выключенном глобальном PlayGo. Именные галочки в настройках остаются.
+- Ошибка одного элемента массива настроек больше не отбрасывает следующие корректные элементы. В журнал добавлены время и длительность долгих операций.
+- AMPR 0.5.0 содержит новые оптимизации чтения/индекса и исправления игр, перечисленные авторами. Скорость и совместимость именно этой сборки на консоли ещё не измерялись. Сообщение PLAY NO LIMIT теперь выдаёт TITAN; официальный модуль AMPR не изменён.
 
-- **Сохранения:** обычный `fakelib` больше не подменяет системный модуль через `libSceSaveData.native.sprx`. Явные библиотеки бэкпорта и `fakelib2` сохраняются.
-- **PKG:** обязательный AMPR остаётся включён даже при выключенном `inject_ampr`. Более новый AMPR игры не заменяется старым. Приоритет установленных внутренних PKG и запуск внешних архивов без переноса сохранены.
-- **PlayGo:** та же библиотека Stub 0.6, автоматическое добавление при обнаружении импорта в `eboot.bin`, обновление известных Stub 0.4/0.5 и сохранение неизвестной собственной библиотеки. Галочки выбора игр, исключения и ручной файл в AMPR сохраняют действие.
-- **Копирование:** недавно изменённые источники ожидают стабилизации, по умолчанию 10 секунд. Задержка настраивается.
-- **Автоудаление плиток:** включено по умолчанию, задержка 300 секунд. Только при подтверждённом отсутствии исходника снимается регистрация собственной плитки TITAN; кэш остаётся, возвращённый источник регистрируется снова. Установленные системные PKG, YouTube и чужие плитки ShadowMount защищены. Ошибка чтения сама по себе не запускает удаление.
-- **USB:** кнопка извлечения с проверками в «Хранилище». Извлечение блокируется при игре, установке, операциях с бэкпортами и зарегистрированных папках/образах ShadowMount. При отказе или отсутствии подтверждения оставьте диск подключённым.
-- Названия игр на языке консоли и звук плитки при наличии `snd0.at9`.
+### Внешний диск
+Архивы PKG на внешних накопителях разрешены **только внутри `homebrew` в корне диска и её подпапок**, например `/mnt/usb0/homebrew/Games/Game.pkg`. PKG в корне, Downloads и etaHEN/games не подхватываются. Внутренние игры, установленные системные PKG, обычные папки игр и образы ShadowMount сохраняют прежние правила. Оригиналы внешних PKG остаются на диске; диск нужен во время игры, а кэш занимает внутреннее место.
 
-**DLC-эмулятор 0.3 из upstream не включён:** в документации его релиза отмечены неисправленные ошибки RPC. Существующие библиотеки игр обрабатываются по настройкам TITAN. Готовые игровые бэкпорты в сборку не добавлены; собственный файл каталога в репозитории пока недоступен.
-
-## Как обновить
-
+### Как обновиться
 1. Закройте игры и полностью перезагрузите PS5.
-2. Загрузите **`TITAN-SirenaGoloviy-fix8.elf`** через Payload Manager либо выберите FIX8 в обновляторе установленного FIX7. После установки обновлятором выполните полную перезагрузку и запустите сохранённый ELF.
-3. Замените старую копию в автозагрузке/источнике Payload Manager. Отдельный автозапуск Kraken или ShadowMount для объединённого TITAN не требуется.
-4. Откройте **`http://IP_ПС5:8097`**. Первый запуск обновит слои библиотек игр; дождитесь **Ready** перед запуском.
+2. Загрузите **TITAN-SirenaGoloviy-fix10.elf** через Payload Manager либо выберите FIX10 в обновляторе TITAN.
+3. При обновлении через TITAN полностью перезапустите консоль и запустите сохранённый ELF. Обновите также старую копию в автозагрузке/Payload Manager, чтобы она не перезаписала подготовленную версию.
+4. Откройте `http://IP_ПС5:8097` и дождитесь Ready. Не запускайте игру во время пересборки кэша.
 
-В **«Настройки → Библиотека и хранилище»** можно выключить автоудаление или изменить задержки. При отключении USB его плитки могут скрыться через пять минут — это ожидаемое поведение при включённой функции. Исходные архивы и кэш она не удаляет.
+ShadowMount **1.7beta12-titan-isolated4**, kstuff-lite **1.11** и PlayGo Stub **0.6** сохранены. Новый DLC-эмулятор не добавлялся. Настройки защищённого автоудаления плиток из FIX8 сохранены; это не удаление оригиналов или кэша.
 
-С FIX6 переходите вручную: старый обновлятор закреплён на прежнем адресе репозитория. [Полная инструкция](https://github.com/grimmtroll2285-dot/TITAN#readme).
+### Проверки
+93 теста Rust, 8 тестов PKG и 27 тестов JavaScript прошли — всего **128**. Проверены локализация, синтаксис интерфейса, обе стадии ELF, точное вложение stage1 и компонентов, SHA-256. Тесты выполнялись на Windows: Unix-проверки symlink и реальный directory fsync на ПК не выполнялись.
 
-## Благодарности
+**На реальной PS5 эта сборка не проверена.** Не обещаем исправление 007 First Light или других ранее сообщённых вылетов без повторной проверки. Целевая конфигурация — 13.60. Нативный PKG-режим AMPR остаётся экспериментальным; PS4, retail/encrypted, AES-XTS и отдельные LIH-патчи не становятся поддерживаемыми.
 
-Спасибо тестерам **[@ImN3k1t](https://t.me/ImN3k1t)** и **Владимиру Барсуку — [@script_durova](https://t.me/script_durova)** за участие в проверках и сообщения об ошибках!
+Полные соответствующие исходники — **TITAN-SirenaGoloviy-fix10-source.zip** в Assets. Автоматический Source code GitHub содержит страницу распространения. Прежние релизы оставлены для отката. Авторство и лицензии сохранены.
 
-Спасибо **quer3q**, **drakmor**, авторам TITAN CORE, AMPR, ShadowMount, kstuff и SDK. Их авторство и лицензии сохранены в исходниках и [CREDITS.md](https://github.com/grimmtroll2285-dot/TITAN/blob/main/CREDITS.md).
+Спасибо **quer3q**, **drakmor**, авторам TITAN CORE, AMPR, ShadowMount, kstuff и SDK, а также тестерам **@ImN3k1t** и **Владимиру Барсуку (@script_durova)** за сообщения об ошибках.
 
-## Файлы и проверка
+## English
 
-- **Надгрузка:** `TITAN-SirenaGoloviy-fix8.elf`.
-- **Полные соответствующие исходники:** `TITAN-SirenaGoloviy-fix8-source.zip`. Автоматические архивы GitHub Source code их не заменяют.
-- **Контрольные суммы и результаты:** `SHA256SUMS.txt`, `validation.json`.
-- **Границы интеграции:** `KRAKEN_0_3_0_UPGRADE.md`.
+FIX10 integrates Kraken Mount 0.3.1 and the official, unmodified AMPR 0.5.0 on top of FIX9 pre1. The console updater, rollback, backports, named PlayGo checkboxes, protected services and homebrew-only external PKG policy are retained.
 
-Прошли 123 теста на ПК, проверка типов PS5, синтаксиса интерфейса и обеих стадий ELF. Проверено сохранение новых настроек на синтетическом предпросмотре.
+On firmware without TitleDir, game registration is batched once per scan through AppInstallAll, with one notification. As upstream, that call refreshes registration metadata globally; TITAN stages/tracks native titles and keeps ownership and busy-mount guards. Metadata uses 1 MiB transfers with atomic publication. Discovery reaches one folder deeper. Game details now include a saved per-game PlayGo toggle. Config arrays skip invalid items, and logs include timestamps and operation durations.
 
-**FIX8 не проверен на реальной PS5.** Проверки ПК не подтверждают запуск конкретных игр, сохранения, автоудаление, извлечение USB или обновление после перезагрузки. Основная целевая конфигурация — PS5 13.60. Не запускайте игру во время подготовки кэша; PlayGo не заменяет необходимый бэкпорт и не гарантирует совместимость всех игр.
+AMPR 0.5.0 brings upstream read/index optimizations and game fixes. We have not measured their results on this combined build. TITAN supplies the custom PLAY NO LIMIT launch notice; AMPR retains its upstream identity. ShadowMount 1.7beta12-titan-isolated4, kstuff-lite 1.11 and PlayGo Stub 0.6 are unchanged; no new DLC emulator was added.
+
+External archive PKGs must be under the drive-root `homebrew` directory or its subfolders. Keep the source drive connected during gameplay. Close games, fully reboot, launch the new ELF and wait for Ready. When updating through TITAN, reboot before launching the saved copy and update any older autoload/Payload Manager copy separately.
+
+**128 host tests passed (93 Rust + 8 PKG + 27 JavaScript); both ELF stages and embedded components were verified. This build has not been tested on a real PS5.** Windows checks do not exercise Unix symlink assertions or real directory fsync. No console performance or individual game-crash fix is claimed; native PKG mode remains experimental. The earlier mid-build game-launch limitation remains: wait until preparation finishes.
+
+Download the separately named source ZIP for complete matching sources. Earlier releases remain available for rollback. Upstream credits and license notices are preserved.
