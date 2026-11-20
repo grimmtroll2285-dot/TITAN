@@ -53,6 +53,20 @@ External archive PKGs must be inside the drive-root **homebrew** directory or it
 
 **Important:** TITAN does not guarantee that every game will run, does not replace required backports, and does not support arbitrary encrypted retail PKGs.
 
+### 📸 Interface screenshots
+
+FIX10 interface preview with demonstration data. Click any image to view it at full size. These screenshots do not represent PS5 gameplay or performance tests.
+
+| Overview | Game library |
+|:--:|:--:|
+| [![Overview](screenshots/titan-overview.jpg)](screenshots/titan-overview.jpg) | [![Game library](screenshots/titan-library.jpg)](screenshots/titan-library.jpg) |
+| **PKG installer** | **Backports** |
+| [![PKG installer](screenshots/titan-installer.jpg)](screenshots/titan-installer.jpg) | [![Backports](screenshots/titan-backports.jpg)](screenshots/titan-backports.jpg) |
+| **Storage** | **Diagnostics** |
+| [![Storage](screenshots/titan-storage.jpg)](screenshots/titan-storage.jpg) | [![Diagnostics](screenshots/titan-diagnostics.jpg)](screenshots/titan-diagnostics.jpg) |
+| **Settings** | **Updates** |
+| [![Settings](screenshots/titan-settings.jpg)](screenshots/titan-settings.jpg) | [![Updates](screenshots/titan-updates.jpg)](screenshots/titan-updates.jpg) |
+
 ### 📚 Documentation
 
 The linked guides may contain Russian text.
@@ -70,4 +84,5 @@ Thank you to **@ImN3k1t** and **Vladimir Barsuk (@script_durova)** for testing o
 Developed by **SirenaGoloviy**.
 
 Built on open-source technologies and contributions from the PS5 homebrew community.
+
 

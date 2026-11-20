@@ -53,6 +53,20 @@ donate: 2200700949917206 💳
 
 **Важно:** TITAN не гарантирует запуск всех игр, не заменяет необходимые бэкпорты и не поддерживает произвольные зашифрованные retail PKG.
 
+### 📸 Скриншоты интерфейса
+
+Предпросмотр FIX10 с демонстрационными данными. Нажмите на снимок, чтобы открыть его в полном размере. Это снимки интерфейса, а не результаты проверки игр или производительности на PS5.
+
+| Обзор | Библиотека |
+|:--:|:--:|
+| [![Обзор](screenshots/titan-overview.jpg)](screenshots/titan-overview.jpg) | [![Библиотека](screenshots/titan-library.jpg)](screenshots/titan-library.jpg) |
+| **Установка PKG** | **Бэкпорты** |
+| [![Установка PKG](screenshots/titan-installer.jpg)](screenshots/titan-installer.jpg) | [![Бэкпорты](screenshots/titan-backports.jpg)](screenshots/titan-backports.jpg) |
+| **Хранилище** | **Диагностика** |
+| [![Хранилище](screenshots/titan-storage.jpg)](screenshots/titan-storage.jpg) | [![Диагностика](screenshots/titan-diagnostics.jpg)](screenshots/titan-diagnostics.jpg) |
+| **Настройки** | **Обновления** |
+| [![Настройки](screenshots/titan-settings.jpg)](screenshots/titan-settings.jpg) | [![Обновления](screenshots/titan-updates.jpg)](screenshots/titan-updates.jpg) |
+
 ### 📚 Документация
 
 [Установка](INSTALL_RU.md) · [Бэкпорты](BACKPORTS.md) · [История изменений](CHANGELOG_RU.md) · [Авторы и лицензии](CREDITS.md)
@@ -68,4 +82,5 @@ donate: 2200700949917206 💳
 Developed by **SirenaGoloviy**.
 
 Built on open-source technologies and contributions from the PS5 homebrew community.
+
 
