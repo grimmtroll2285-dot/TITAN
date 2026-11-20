@@ -1,13 +1,13 @@
 {
-  "version": "1.0.8",
-  "tag": "fix10",
-  "base": "fix9-pre1",
+  "version": "1.0.9",
+  "tag": "fix11",
+  "base": "fix10",
   "repository": "grimmtroll2285-dot/TITAN",
   "prerelease": false,
   "stage1": {
     "bytes": 10716176,
-    "sha256": "89531fee6476e25cdd4703f5d3d25bbb1dcea5c4402a21c6c3b234f61b1bdf7b",
-    "entry": "0x1ae7ac",
+    "sha256": "814d89148f2adb307b2ec09e7cfb9359be91a5ae40cbeca234b6902e82cfb033",
+    "entry": "0x1ae8bc",
     "type": "ELF64 x86-64 ET_DYN",
     "executable_entry": true,
     "needed": [
@@ -25,8 +25,8 @@
   },
   "stage2": {
     "bytes": 21431312,
-    "sha256": "fa255a452dcc4412178e89fe5beaf119017d7904c66ac70b6aeb400b8200a220",
-    "entry": "0x1aea0c",
+    "sha256": "c68cf182349e880eac224d2a935afe54d6ef73eecebca33f486faca1027fbb45",
+    "entry": "0x1aeb0c",
     "type": "ELF64 x86-64 ET_DYN",
     "executable_entry": true,
     "needed": [
@@ -51,10 +51,10 @@
   "stage1_embedded_exactly": true,
   "ui_source_embedded_exactly": true,
   "tests": {
-    "portable_rust": 93,
+    "portable_rust": 97,
     "pkg_library": 8,
     "javascript": 27,
-    "passed": 128
+    "passed": 132
   },
   "hardware_tested": false,
   "console_benchmarks_run": false,
@@ -75,7 +75,7 @@
     "compiler_jobs": 2
   },
   "source_zip": {
-    "sha256": "66efb8afca1297137791f0ae9beabf54451b9762fdb10eed702b1c3554d8fd07",
-    "bytes": 48744027
+    "sha256": "46e9bec6ee678f1695d79fb82749b39b0321692102e7803ca06c4129343ab4d4",
+    "bytes": 48757551
   }
 }

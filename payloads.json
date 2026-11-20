@@ -1,20 +1,20 @@
 {
   "name": "TITAN · SirenaGoloviy",
-  "icons_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix10/icons.json",
+  "icons_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix11/icons.json",
   "payloads": [
     {
       "id": "titan-sirenagoloviy",
       "name": "TITAN · SirenaGoloviy",
-      "filename": "TITAN-SirenaGoloviy-fix10.elf",
-      "url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix10/TITAN-SirenaGoloviy-fix10.elf",
-      "version": "1.0.8",
-      "last_update": "2026-11-20",
+      "filename": "TITAN-SirenaGoloviy-fix11.elf",
+      "url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix11/TITAN-SirenaGoloviy-fix11.elf",
+      "version": "1.0.9",
+      "last_update": "2026-11-21",
       "category": "Games",
       "author": "SirenaGoloviy; upstream authors credited",
-      "description": "FIX10: Kraken 0.3.1 + AMPR 0.5.0, batch registration, PlayGo controls. Console validation pending.",
-      "checksum": "fa255a452dcc4412178e89fe5beaf119017d7904c66ac70b6aeb400b8200a220",
-      "icon_key": "titan-fix10",
-      "details_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix10/README.txt"
+      "description": "FIX11: installed-source receipt compatibility after the TITAN CORE rename. Console validation pending.",
+      "checksum": "c68cf182349e880eac224d2a935afe54d6ef73eecebca33f486faca1027fbb45",
+      "icon_key": "titan-fix11",
+      "details_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix11/README.txt"
     }
   ]
 }

@@ -26,13 +26,19 @@ donate: 2200700949917206 💳
 
 ### 📥 Download TITAN
 
-**Stable release: FIX10 (1.0.8)**
+**Stable release: FIX11 (1.0.9)**
 
-[⬇️ Download TITAN FIX10](https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix10/TITAN-SirenaGoloviy-fix10.elf)
+[⬇️ Download TITAN FIX11](https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix11/TITAN-SirenaGoloviy-fix11.elf)
 
 **Test release: FIX9 pre1**
 
 [🧪 Download the pre-release](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix9-pre1)
+
+### What's new in FIX11
+
+Fixed installed-PKG receipt compatibility after the TITAN CORE → TITAN rename. Legacy receipts are normalized automatically only when the title and source path match. Original permission history is preserved; foreign records remain rejected. FIX10 features and the screenshot gallery are retained.
+
+**132 host tests passed. PS5 validation is still pending.** [FIX11 files and full sources](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix11).
 
 ### What's new in FIX10
 
@@ -84,5 +90,6 @@ Thank you to **@ImN3k1t** and **Vladimir Barsuk (@script_durova)** for testing o
 Developed by **SirenaGoloviy**.
 
 Built on open-source technologies and contributions from the PS5 homebrew community.
+
 
 

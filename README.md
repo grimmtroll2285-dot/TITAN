@@ -26,13 +26,19 @@ donate: 2200700949917206 💳
 
 ### 📥 Скачать TITAN
 
-**Стабильная версия: FIX10 (1.0.8)**
+**Стабильная версия: FIX11 (1.0.9)**
 
-[⬇️ Скачать TITAN FIX10](https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix10/TITAN-SirenaGoloviy-fix10.elf)
+[⬇️ Скачать TITAN FIX11](https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix11/TITAN-SirenaGoloviy-fix11.elf)
 
 **Тестовая версия: FIX9 pre1**
 
 [🧪 Скачать предварительную сборку](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix9-pre1)
+
+### Что нового в FIX11
+
+Исправлена совместимость записей установленных PKG после переименования TITAN CORE → TITAN. Старые записи обновляются автоматически только при совпадении игры и исходного пути. Исходные права сохраняются, чужие записи по-прежнему отклоняются. Возможности FIX10 и галерея скриншотов сохранены.
+
+**132 теста на ПК прошли. Проверка на PS5 ещё предстоит.** [Файлы FIX11 и полные исходники](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix11).
 
 ### Что нового в FIX10
 
@@ -82,5 +88,6 @@ donate: 2200700949917206 💳
 Developed by **SirenaGoloviy**.
 
 Built on open-source technologies and contributions from the PS5 homebrew community.
+
 
 
