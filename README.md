@@ -1,5 +1,7 @@
 # 🛡️ TITAN | PS5 Homebrew Manager
 
+**Русский** · [English](README_EN.md)
+
 ### PLAY NO LIMIT
 **by SirenaGoloviy**
 
