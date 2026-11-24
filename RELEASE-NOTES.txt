@@ -1,35 +1,61 @@
-# TITAN · FIX11 · 1.0.9
+# TITAN FIX12 · 1.0.10 · stable
 
-**PLAY NO LIMIT by SirenaGoloviy**
+### Что нового в FIX12
 
-## Русский
+- **Kraken Mount 0.3.2 и официальный AMPR 0.5.1.** Обновлены нативный движок и модуль чтения упакованных игр.
+- **Закрытие и переход между ELF игры:** собственные монтирования в песочнице снимаются сразу после выхода, библиотечный overlay кратко сохраняется для перехода к следующему ELF той же игры. Занятые и чужие монтирования принудительно не снимаются.
+- **Исправления AMPR от upstream:** сохранения в PKG, зависание Hades при закрытии, чтение каталогов в DIRT 5, MARVEL Cosmic Invasion и Scott Pilgrim EX. Работа конкретных игр в TITAN требует проверки на PS5; исправление сохранений Wolverine ещё не подтверждено автору отчёта.
+- **Библиотека:** поиск по названию, Title ID и пути; фильтр по накопителю; кнопка «Играть» для готовых нативных игр.
+- **Диагностика:** сохранение последнего обнаруженного сбоя и текстовый отчёт из карточки игры. Полный дамп ядра не скачивается автоматически.
+- **Настройки:** исключение файлов и папок из нативного сканирования; отключение библиотечного overlay отдельно для игры в папке. Для PKG обязательный AMPR сохраняется.
+- **Playden:** подмножество API v1 нативной библиотеки на порту 8097: список, сканирование, исключения, снятие собственной регистрации без удаления исходника и переключение overlay.
+- **FW 12+:** восстановление плитки TITAN через пакетную регистрацию и повторное открытие веб-порта после выхода из режима покоя.
 
-Исправляющий выпуск поверх FIX10. Устраняет несовместимость служебных записей установленных PKG после переименования TITAN CORE в TITAN.
+Сохранены обновлятор TITAN с выбором версии и откатом, PlayGo 0.6 с выбором игр, бэкпорты, автоудаление только собственных пропавших плиток, защита YouTube и сторонних монтирований. Внешние архивы PKG сканируются только в `<диск>/homebrew/` и её подпапках. Файлы установленных системных PKG остаются на своих местах.
 
-Старая запись с `owner: TITAN CORE` раньше отклонялась сообщением **Installed source receipt belongs to another source**. Теперь TITAN распознаёт прежнее имя владельца, проверяет Title ID и исходный путь и атомарно сохраняет запись в текущем формате. При совпадении файла сохраняются записанные исходные права, inode/device и размер. PKG остаётся в исходном системном месте; миграция не переносит и не удаляет игру.
+**FIX12 — стабильный выпуск (1.0.10), не pre-release.** Статус релиза не означает подтверждённую совместимость всех игр. Аппаратные испытания FIX12 и замеры производительности на PS5 не выполнялись. [Проверки](VALIDATION.md) · [Подробности интеграции](KRAKEN_0_3_2_UPGRADE.md) · [История](CHANGELOG_RU.md).
 
-Чужие владельцы, несовпадающие Title ID и пути по-прежнему отклоняются. Проверки обычного файла, symlink и изменения источника во время подготовки сохранены.
+### Установка и начало работы
 
-Сохранены все функции FIX10: Kraken 0.3.1, официальный AMPR 0.5.0, пакетная регистрация, PlayGo, обновлятор, бэкпорты и внешние PKG только из `homebrew` и её подпапок. ShadowMount 1.7beta12-titan-isolated4, kstuff-lite 1.11 и PlayGo Stub 0.6 не менялись.
+1. Скачайте **TITAN-SirenaGoloviy-fix12.elf** из [релиза FIX12](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix12). При ручной установке используйте внешний ELF, а не stage1 или автоматически созданный GitHub Source code.
+2. Закройте игры и полностью перезагрузите PS5. Выполните свой jailbreak и запустите ELF через совместимый Payload Manager либо ELF Loader. Старые копии в автозагрузке также замените на FIX12.
+3. Откройте плитку TITAN или `http://IP_PS5:8097` с телефона/ПК в той же сети. Дождитесь готовности служб и статуса **Ready / Готово** у игры.
+4. Для внешних архивов PKG используйте `/mnt/usb0/homebrew/Игра.pkg` или подпапки `homebrew` в корне нужного диска. Внутренние исходники можно хранить в `/data/homebrew`. Системные установленные PKG вручную не переносите.
+5. В библиотеке откройте карточку и нажмите «Играть» либо запустите зарегистрированную игру из меню PS5. Поиск и фильтр диска расположены над карточками.
 
-### Обновление
-Закройте игры, полностью перезагрузите PS5 и запустите **TITAN-SirenaGoloviy-fix11.elf**. Если используете обновлятор TITAN, подготовьте FIX11, затем полностью перезагрузите консоль и запустите сохранённую копию. Замените старый ELF в Payload Manager/автозагрузке. Дождитесь Ready перед запуском игры. Совместимая старая запись исправится при следующей подготовке установленного PKG; вручную удалять запись для этой миграции не требуется.
+**PlayGo:** «Настройки → PlayGo — выбор игр»; отметьте нужные игры и сохраните. **Overlay:** переключатель в карточке нативной игры в папке; для PKG недоступен. **Отчёт:** ссылка «Отчёт об игре» в карточке. **Обновления:** выберите нужный стабильный выпуск или pre-release; доступны обновление, переустановка и откат. После установки полностью перезапустите консоль.
 
-### Проверки
-97 тестов Rust (включая четыре новых сценария миграции), 8 тестов чтения PKG и 27 тестов JavaScript прошли — всего **132**. Проверка типов FreeBSD/unified-stack завершилась без предупреждений. Обе стадии ELF собраны, вложенный stage1 и компоненты проверены, контрольные суммы приложены.
+При первом запуске FIX12 старые кэши обновляются для нового расположения дополнительных ELF. Дождитесь Ready. Файлы игры, записанные в кэш и не перечисленные как созданные TITAN, сохраняются. Полную инструкцию смотрите в [INSTALL_RU.md](INSTALL_RU.md).
 
-**На реальной PS5 исправление ещё не проверено.** Файл записи PPSA12544 с консоли не предоставлен: исправлен подтверждённый в коде сценарий старого имени владельца. Если конкретная запись содержит другой путь или Title ID, защита продолжит её отклонять. Исправление других вылетов, включая 007 First Light, не заявляется. Windows-проверки не выполняют Unix-assertions для symlink и реальный directory fsync.
 
-Полные соответствующие исходники — **TITAN-SirenaGoloviy-fix11-source.zip**, а не автоматический Source code GitHub. Предыдущие выпуски сохранены для отката. Авторство и лицензии upstream сохранены.
+---
 
-## English
+### What's new in FIX12
 
-FIX11 fixes installed-PKG receipt compatibility after the TITAN CORE → TITAN rename. Older `TITAN CORE` owner labels caused **Installed source receipt belongs to another source**. The old label is now accepted only for the exact expected title and source path, and normalized atomically. For an unchanged file, the original permission history, identity and size remain intact. The PKG stays in its original location.
+- **Kraken Mount 0.3.2 and official AMPR 0.5.1:** updated native engine and packed-game runtime.
+- **Game exit and ELF transitions:** remove owned sandbox mounts promptly on exit and briefly retain the library overlay for another ELF of the same title. Busy or foreign mounts are never force-unmounted.
+- **Upstream AMPR fixes:** PKG save handling, Hades exit hang, directory reads in DIRT 5, MARVEL Cosmic Invasion and Scott Pilgrim EX. These games still need confirmation in TITAN; the Wolverine save fix remains unconfirmed by its reporter.
+- **Library:** search by title, Title ID or path, drive filter and Play button for ready native games.
+- **Diagnostics:** last detected crash and a text report in game details. Full core dumps are not downloaded automatically.
+- **Settings:** exclude source files/folders from native discovery and disable the library overlay for an individual folder game. PKGs retain their required AMPR reader.
+- **Playden:** native-library API v1 subset on port 8097: list, scan, exclusions, unregister owned titles while keeping sources, and overlay control.
+- **FW 12+:** recover the TITAN launcher tile with batch registration; rebind the web port after rest mode.
 
-Foreign owners and mismatching titles/paths remain rejected; regular-file, symlink and source-change guards are retained. All FIX10 features and bundled service binaries remain available, including Kraken 0.3.1, AMPR 0.5.0, PlayGo, the updater and homebrew-only external PKG playback.
+TITAN release selection, updates/downgrades, PlayGo 0.6 game selection, backports, guarded missing-tile cleanup, YouTube protection and foreign-mount protections remain. External archive PKGs are discovered only under `<drive>/homebrew/`. Installed system PKGs stay at their original paths.
 
-Close games, fully reboot, launch the new ELF and wait for Ready. When using TITAN's updater, reboot after preparing the update and update any older Payload Manager/autoload copy separately. Compatible legacy receipts migrate when the installed game is prepared.
+**FIX12 is a stable release (1.0.10), not a pre-release.** Release status does not certify every game. No PS5 hardware tests or performance benchmarks were performed for FIX12. [Validation](VALIDATION.md) · [Integration details](KRAKEN_0_3_2_UPGRADE.md) · [History](CHANGELOG_RU.md).
 
-**132 host tests passed (97 Rust + 8 PKG + 27 JavaScript), FreeBSD types checked and both ELF stages verified. No PS5 hardware validation was performed.** The actual PPSA12544 receipt was not supplied; different-path/title conflicts remain protected. No unrelated game-crash fix is claimed. Windows tests do not exercise Unix symlink assertions or real directory fsync.
+### Install and use
 
-Use the separately named source ZIP for complete matching sources. Earlier releases remain available for rollback; upstream authorship and licenses are preserved.
+1. Download **TITAN-SirenaGoloviy-fix12.elf** from the [FIX12 release](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix12). Use the outer ELF, not stage1 or GitHub's automatic Source code archive.
+2. Close games, fully reboot the console, run your jailbreak and load the ELF through a compatible Payload Manager or ELF Loader. Replace older autoload copies too.
+3. Open the TITAN tile or `http://PS5_IP:8097` from a computer/phone on the same network. Wait for services and the game's **Ready** status.
+4. Put external archive PKGs in the drive-root `homebrew` folder, e.g. `/mnt/usb0/homebrew/Game.pkg`, including subfolders. Internal sources may use `/data/homebrew`. Do not move system-installed PKGs manually.
+5. Open a library card and select **Play**, or launch the registered title from the PS5 home screen. Search and the drive filter sit above game cards.
+
+**PlayGo:** Settings → PlayGo game selection → check games → Save. **Overlay:** per-folder-game switch in game details; unavailable for PKGs. **Reports:** Game report link in the card. **Updates:** select a stable release or pre-release to upgrade, reinstall or downgrade, then fully restart the console.
+
+The first FIX12 scan upgrades older cache layouts to extract additional ELF files. Wait for Ready. Game-written cache files outside TITAN's generated-file list are retained. See [INSTALL_EN.md](INSTALL_EN.md) for the complete guide.
+
+
+FIX12 also adds a kernel-held lifetime lock independent of the web port to prevent two FIX12 processes changing the same cache. Fully reboot when moving from FIX11. The reported Forza Horizon 5 PKG crash remains unconfirmed fixed; Kraken upstream explicitly states v0.3.2 does not fix it.

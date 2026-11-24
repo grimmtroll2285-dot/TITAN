@@ -1,3 +1,5 @@
+> Historical document. Current stable release: [FIX12](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix12). Use [current installation instructions](INSTALL_RU.md).
+
 **PLAY NO LIMIT by SirenaGoloviy**
 
 **TITAN FIX9 pre1 · 1.0.7-pre.1 · Homebrew-only USB PKG**

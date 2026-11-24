@@ -1,6 +1,6 @@
-# TITAN FIX7 catalog-backed backports
+# TITAN FIX12 catalog-backed backports
 
-FIX7 (1.0.5) includes this feature on top of published FIX6. It excludes the
+FIX12 (1.0.5) includes this feature on top of published FIX6. It excludes the
 separate, unproven PKG/fakelib2 investigation changes. Both ELF stages are built
 for the release; on-console download/boot/gameplay validation is still pending.
 The product and repository are now named TITAN. Existing internal data paths

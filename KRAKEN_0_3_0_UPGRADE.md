@@ -1,3 +1,5 @@
+> Historical document. Current stable release: [FIX12](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix12). Use [current installation instructions](INSTALL_RU.md).
+
 # TITAN FIX8 / Kraken Mount 0.3.0
 
 Upstream tag v0.3.0: e1e784560fe3a56e3b5ffd579f47ed5b2cf194f7.

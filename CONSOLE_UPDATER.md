@@ -1,14 +1,6 @@
-FIX7 migration note: the repository is now grimmtroll2285-dot/TITAN. FIX6's
-old pinned asset URLs can prevent an in-app transition after the rename: load
-FIX7 manually and update old Payload Manager/autoload copies. FIX7 recognizes
-both new TITAN- and historical TITAN-CORE filenames in the new repository.
-Downgrading to FIX6 restores that older updater behavior.
+# TITAN FIX12 console updater (1.0.10)
 
-# FIX6 console updater (1.0.4)
-
-The updater and embedded PlayGo 0.6 are part of the same unified payload. Existing
-native game, external-PKG, image-service and cache policies remain the Fix5/PlayGo
-baseline. No claim of additional game compatibility or restored licenses is made.
+Automatic metadata checks, user-selected installation, stable/pre-release releases and downgrade remain available. Standalone Kraken self-replacement is disabled; only TITAN releases are installed. FIX6 may need a manual transition after the repository rename.
 
 ## Console flow
 
@@ -39,7 +31,7 @@ baseline. No claim of additional game compatibility or restored licenses is made
 
 Only the owner repository `grimmtroll2285-dot/TITAN` is queried.
 The server accepts a validated release tag, never a browser-provided URL, path or
-checksum. Only a single supported TITAN-CORE ELF asset from a published release is
+checksum. Only a single supported TITAN/TITAN-CORE outer ELF asset from a published release is
 accepted. Tags and asset paths must match the exact owner repository. Drafts,
 foreign assets, ambiguous ELFs and files larger than 64 MiB are rejected.
 

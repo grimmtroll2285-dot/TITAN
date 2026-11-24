@@ -1,20 +1,20 @@
 {
   "name": "TITAN · SirenaGoloviy",
-  "icons_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix11/icons.json",
+  "icons_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix12/icons.json",
   "payloads": [
     {
       "id": "titan-sirenagoloviy",
       "name": "TITAN · SirenaGoloviy",
-      "filename": "TITAN-SirenaGoloviy-fix11.elf",
-      "url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix11/TITAN-SirenaGoloviy-fix11.elf",
-      "version": "1.0.9",
-      "last_update": "2026-11-21",
+      "filename": "TITAN-SirenaGoloviy-fix12.elf",
+      "url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix12/TITAN-SirenaGoloviy-fix12.elf",
+      "version": "1.0.10",
+      "last_update": "2026-11-24",
       "category": "Games",
       "author": "SirenaGoloviy; upstream authors credited",
-      "description": "FIX11: installed-source receipt compatibility after the TITAN CORE rename. Console validation pending.",
-      "checksum": "c68cf182349e880eac224d2a935afe54d6ef73eecebca33f486faca1027fbb45",
-      "icon_key": "titan-fix11",
-      "details_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/download/fix11/README.txt"
+      "description": "FIX12 stable: Kraken 0.3.2, official AMPR 0.5.1, exit lifecycle, game reports, Playden API, library search and lifetime instance lock. PS5 validation pending.",
+      "checksum": "8809c5f18633d252fdd0ba99ebd7d466af367472ae42e562efa7461fa299334f",
+      "icon_key": "titan-fix12",
+      "details_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix12"
     }
   ]
 }

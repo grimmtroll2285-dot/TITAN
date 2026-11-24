@@ -1,3 +1,5 @@
+> Historical document. Current stable release: [FIX12](https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix12). Use [current installation instructions](INSTALL_RU.md).
+
 # TITAN · FIX11 · 1.0.9
 
 **PLAY NO LIMIT by SirenaGoloviy**

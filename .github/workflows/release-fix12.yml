@@ -1,0 +1,54 @@
+name: Build and publish TITAN FIX12 stable
+on:
+  push:
+    branches: [release/fix12]
+    paths: [release/fix12/**, .github/workflows/release-fix12.yml]
+permissions:
+  contents: write
+concurrency:
+  group: titan-fix12-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Reconstruct verified corresponding source
+        run: python3 release/fix12/prepare.py
+      - name: Build both PS5 ELF stages
+        working-directory: rebuild/source
+        env:
+          TITAN_UNIFIED_STACK: '1'
+        run: bash ps5/build.sh
+      - name: Verify host logic and actual updater ELF checks
+        working-directory: rebuild/source
+        run: |
+          docker run --rm --user "$(id -u):$(id -g)" -e HOME=/tmp -e CARGO_BUILD_JOBS=2 -e CARGO_HOME=/work/target/ps5/cargo -v "$PWD:/work" titan-core-ps5 bash -ec '
+            cargo test --manifest-path review/portable-tests/Cargo.toml --quiet
+            cargo test --manifest-path review/host-tests/Cargo.toml --quiet
+            cargo test -p titan-core-pkg --quiet
+            cargo run --manifest-path review/portable-tests/Cargo.toml --quiet --bin verify-release -- target/ps5/titan-core-stage1.elf target/ps5/titan-core.elf
+          '
+          node --test review/*.test.cjs
+          python3 -c "from pathlib import Path; import re; Path('/tmp/titan-fix12-ui.js').write_text('\n'.join(re.findall(r'<script[^>]*>(.*?)</script>',Path('src/ui.html').read_text(),re.S)))"
+          node --check /tmp/titan-fix12-ui.js
+      - name: Validate embedded inputs and package full sources
+        run: python3 release/fix12/package.py
+      - name: Commit generated catalog and validation
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add icons.json payloads.json validation.json SHA256SUMS.txt
+          git diff --cached --quiet || git commit -m 'Record FIX12 release hashes and Payload Manager catalog'
+          git push origin HEAD:release/fix12
+      - name: Upload complete draft then publish stable release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view fix12 >/dev/null 2>&1; then
+            echo 'fix12 already exists; refusing to replace a published release' >&2
+            exit 1
+          fi
+          gh release create fix12 --target "$(git rev-parse HEAD)" --title 'TITAN FIX12 · Kraken 0.3.2 + AMPR 0.5.1' --notes-file RELEASE-NOTES.txt --draft release-assets/*
+          gh release edit fix12 --draft=false --prerelease=false --latest
