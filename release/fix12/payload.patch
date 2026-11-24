@@ -442,6 +442,13 @@
      && rm -rf /var/lib/apt/lists/*
  ENV PS5_PAYLOAD_SDK=/opt/ps5-payload-sdk LLVM_CONFIG=/usr/bin/llvm-config-19
  ENV PATH=/usr/lib/llvm-19/bin:$PATH
+@@ -26,5 +26,5 @@
+ ARG PACBREW_SQLITE_SHA256=e811bc2e4676c5bb7f80a8fe928d2985dce599996a5ca6b54da3e72699287887
+ RUN curl -fsSL --proto =https --retry 3 "$PACBREW_SQLITE_URL" -o /tmp/pacbrew.tar.gz \
+     && echo "$PACBREW_SQLITE_SHA256  /tmp/pacbrew.tar.gz" | sha256sum -c - \
+-    && tar -xzf /tmp/pacbrew.tar.gz -C / opt/ps5-payload-sdk/target/user/homebrew/lib/libsqlite3.a \
++    && tar -xzf /tmp/pacbrew.tar.gz -C / opt/ps5-payload-sdk/target/user/homebrew/lib/libsqlite3.a opt/ps5-payload-sdk/target/user/homebrew/include/sqlite3.h \
+     && rm /tmp/pacbrew.tar.gz
 --- a/ps5/appdb.c
 +++ b/ps5/appdb.c
 @@ -1,10 +1,11 @@
