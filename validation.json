@@ -5,8 +5,8 @@
   "repository": "grimmtroll2285-dot/TITAN",
   "prerelease": false,
   "stage1": {
-    "bytes": 10814560,
-    "sha256": "b3859fe0708fbe5d8f940f7a336eaa3ee4bb6125749d18c0a024d975d00bc46c",
+    "bytes": 10814552,
+    "sha256": "b586c6ef79cccd316999c5570041e4d6d05a04e4c9461b00022f2716be5c02cb",
     "entry": "0x1be610",
     "type": "ELF64 x86-64 ET_DYN",
     "executable_entry": true,
@@ -24,8 +24,8 @@
     ]
   },
   "stage2": {
-    "bytes": 21628000,
-    "sha256": "8809c5f18633d252fdd0ba99ebd7d466af367472ae42e562efa7461fa299334f",
+    "bytes": 21627992,
+    "sha256": "b50ea538d9117730c8f06ca40cac258693db85df2a5d0161599447d8f5d4ba78",
     "entry": "0x1be850",
     "type": "ELF64 x86-64 ET_DYN",
     "executable_entry": true,
@@ -83,7 +83,7 @@
     "host": "Linux cross-build"
   },
   "source_zip": {
-    "sha256": "9ebe45962402307931979ca29abe2ae45666bdf359bed297a8f08c687d21eae0",
-    "bytes": 50976173
+    "sha256": "3a8526647a651de45bf93203723a161a635b05d3f8a1f80f167c7c26bc73c3f2",
+    "bytes": 50976174
   }
 }

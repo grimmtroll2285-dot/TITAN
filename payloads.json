@@ -12,7 +12,7 @@
       "category": "Games",
       "author": "SirenaGoloviy; upstream authors credited",
       "description": "FIX12 stable: Kraken 0.3.2, official AMPR 0.5.1, exit lifecycle, game reports, Playden API, library search and lifetime instance lock. PS5 validation pending.",
-      "checksum": "8809c5f18633d252fdd0ba99ebd7d466af367472ae42e562efa7461fa299334f",
+      "checksum": "b50ea538d9117730c8f06ca40cac258693db85df2a5d0161599447d8f5d4ba78",
       "icon_key": "titan-fix12",
       "details_url": "https://github.com/grimmtroll2285-dot/TITAN/releases/tag/fix12"
     }
